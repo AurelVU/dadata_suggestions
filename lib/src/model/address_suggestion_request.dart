@@ -19,6 +19,9 @@ class AddressSuggestionRequest {
   @JsonKey(name: 'language')
   String? language = 'ru';
 
+  @JsonKey(name: 'ip')
+  String? ip;
+
   @JsonKey(name: 'locations')
   List<AddressSuggestionConstraint>? constraints;
 
