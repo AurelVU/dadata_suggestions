@@ -15,6 +15,7 @@ export 'src/model/address_suggestion_constraint.dart';
 export 'src/model/address_suggestion_priority.dart';
 export 'src/model/address_suggestion_radius_constraint.dart';
 export 'src/model/address_suggestion_request.dart';
+export 'src/model/level_boundry_value.dart';
 export 'src/model/level_boundry.dart';
 export 'src/model/revgeocode_suggestion_request.dart';
 export 'src/model/suggestion_data.dart';
