@@ -15,4 +15,3 @@ class LevelBoundry {
 
   Map<String, dynamic> toJson() => _$LevelBoundryToJson(this);
 }
-

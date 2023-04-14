@@ -1,10 +1,9 @@
-import 'package:dadata_suggestions/src/model/level_boundry.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import 'address_suggestion_constraint.dart';
 import 'address_suggestion_priority.dart';
 import 'address_suggestion_radius_constraint.dart';
-import 'level_boundry_value.dart';
+import 'level_boundry.dart';
 
 part 'address_suggestion_request.g.dart';
 
