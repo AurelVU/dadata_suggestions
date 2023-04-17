@@ -11,7 +11,7 @@ part 'address_suggestion_request.g.dart';
 @JsonSerializable(explicitToJson: true)
 class AddressSuggestionRequest {
   @JsonKey(name: 'query', required: true)
-  String query;
+  String? query;
 
   @JsonKey(name: 'count')
   int? count = 10;

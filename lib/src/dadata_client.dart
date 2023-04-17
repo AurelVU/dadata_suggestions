@@ -27,6 +27,16 @@ class DadataClient {
     }
   }
 
+  /// Calls suggestion by ip API with [AddressSuggestionRequest] provided.
+  Future<AddressResponse?> geoByIp(AddressSuggestionRequest query) async {
+    try {
+      final q = query.toJson();
+      return _performRequest(q, Constants.geoByIpEndpoint);
+    } catch (e) {
+      throw e;
+    }
+  }
+
   /// Calls reverse geocoding API with [RevgeocodeSuggestionRequest] provided.
   Future<AddressResponse?> revGeocode(RevgeocodeSuggestionRequest query) async {
     try {
