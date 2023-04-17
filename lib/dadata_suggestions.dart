@@ -56,6 +56,28 @@ class DadataSuggestions {
     }
   }
 
+  /// Please pass [ip] and
+  /// an optional [completion] handler.
+  /// GeoByIp would be returned as [Future<AddressResponse>]
+  /// or passed to completion block along with [Error] or [Exception] as [dynamic] if any.
+  Future<AddressResponse?> geoByIp(
+    AddressSuggestionRequest request, {
+    void Function(AddressResponse? resp, dynamic e)? completion,
+  }) async {
+    try {
+      final resp = await _client.geoByIp(request);
+      if (completion != null) {
+        completion(resp, null);
+      }
+      return resp;
+    } catch (e) {
+      if (completion != null) {
+        completion(null, e);
+      }
+      return null;
+    }
+  }
+
   /// Please pass [request] and
   /// an optional [completion] handler.
   /// Suggestions would be returned as [Future<AddressResponse>]
