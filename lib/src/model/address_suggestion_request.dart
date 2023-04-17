@@ -42,7 +42,9 @@ class AddressSuggestionRequest {
   ///[query] is required field.
   ///[count] defaults to `10` and [language] defaults to `ru`.
   AddressSuggestionRequest(
-    this.query, {
+  {
+    this.query,
+    this.ip,
     this.count,
     this.language,
     this.constraints,
