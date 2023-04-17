@@ -13,7 +13,8 @@ AddressSuggestionRequest _$AddressSuggestionRequestFromJson(
     requiredKeys: const ['query'],
   );
   return AddressSuggestionRequest(
-    json['query'] as String?,
+    query: json['query'] as String?,
+    ip: json['ip'] as String?,
     count: json['count'] as int?,
     language: json['language'] as String?,
     constraints: (json['locations'] as List<dynamic>?)
@@ -34,7 +35,7 @@ AddressSuggestionRequest _$AddressSuggestionRequestFromJson(
     lowerBoundary: json['to_bound'] == null
         ? null
         : LevelBoundry.fromJson(json['to_bound'] as Map<String, dynamic>),
-  )..ip = json['ip'] as String?;
+  );
 }
 
 Map<String, dynamic> _$AddressSuggestionRequestToJson(
