@@ -28,10 +28,10 @@ class DadataClient {
   }
 
   /// Calls suggestion by ip API with [AddressSuggestionRequest] provided.
-  Future<AddressResponse?> geoByIp(AddressSuggestionRequest query) async {
+  Future<AddressSuggestion?> geoByIp(AddressSuggestionRequest query) async {
     try {
       final q = query.toJson();
-      return _performRequest(q, Constants.geoByIpEndpoint);
+      return _performSuggestion(q, Constants.geoByIpEndpoint);
     } catch (e) {
       throw e;
     }
@@ -59,6 +59,25 @@ class DadataClient {
       );
       if (resp.body.isNotEmpty == true) {
         return AddressResponse.fromJson(jsonDecode(resp.body));
+      }
+      return null;
+    } catch (e) {
+      throw e;
+    }
+  }
+
+  Future<AddressSuggestion?> _performSuggestion(
+    dynamic query,
+    String endpoint,
+  ) async {
+    try {
+      final resp = await _client.post(
+        Uri.parse(endpoint),
+        headers: _headers,
+        body: jsonEncode(query),
+      );
+      if (resp.body.isNotEmpty == true) {
+        return AddressSuggestion.fromJson(jsonDecode(resp.body));
       }
       return null;
     } catch (e) {

@@ -2,6 +2,7 @@ library dadata_suggestions;
 
 import 'dart:convert';
 
+import 'package:dadata_suggestions/src/model/address_suggestion.dart';
 import 'package:http/http.dart';
 
 import 'src/constants.dart';
@@ -60,9 +61,9 @@ class DadataSuggestions {
   /// an optional [completion] handler.
   /// GeoByIp would be returned as [Future<AddressResponse>]
   /// or passed to completion block along with [Error] or [Exception] as [dynamic] if any.
-  Future<AddressResponse?> geoByIp(
+  Future<AddressSuggestion?> geoByIp(
     AddressSuggestionRequest request, {
-    void Function(AddressResponse? resp, dynamic e)? completion,
+    void Function(AddressSuggestion? resp, dynamic e)? completion,
   }) async {
     try {
       final resp = await _client.geoByIp(request);
