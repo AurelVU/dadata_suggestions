@@ -69,7 +69,7 @@ class _SuggestionsScreenState extends State<SuggestionsScreen> {
     try {
       final resp = await _suggestions.suggest(
         AddressSuggestionRequest(
-          text,
+          query: text,
         ),
       );
       if (resp != null && resp.suggestions.isNotEmpty) {
